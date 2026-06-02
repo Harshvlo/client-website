@@ -24,51 +24,61 @@ const partners = [
     name: "DHL",
     cat: "Courier Tech",
     desc: "Global logistics tech provider offering premium international express shipping integrated with VEXARO's network.",
+    logo: "dhl.png",
   },
   {
     name: "Amazon Shipping",
     cat: "Courier Tech",
     desc: "Advanced tech-driven e-commerce fulfillment network providing reliable merchant delivery integrated with VEXARO's network.",
+    logo: "amazon-shipping.png",
   },
   {
     name: "Aramex",
     cat: "Courier Tech",
     desc: "Global express distribution network offering cross-border e-commerce solutions integrated with VEXARO's network.",
+    logo: "aramex.png",
   },
   {
     name: "Ekart",
     cat: "Courier Tech",
     desc: "India's largest automated supply chain and 4PL e-commerce fulfillment solution integrated with VEXARO's network.",
+    logo: "ekart.png",
   },
   {
     name: "Xpressbees",
     cat: "Courier Tech",
     desc: "Logistics TechIndia's leading eCommerce shipping solution integrated with VEXARO's network.",
+    logo: "xpressbees.png",
   },
   {
     name: "SkyNet",
     cat: "E-commerce",
     desc: "Seamless order sync between Shopify stores and VEXARO's fulfilment platform.",
+    logo: "skynet.png",
   },
   {
     name: "FedEx",
     cat: "E-commerce",
     desc: "Plugin-ready integration for WooCommerce merchants across India.",
+    logo: "fedex.png",
   },
   {
     name: "Ecom Express",
     cat: "Courier Partner",
     desc: "Indian domestic courier and express delivery company.",
+    logo: "ecom-express.png",
   },
   {
     name: "LogyXpress",
     cat: "E-commerce",
     desc: "Trusted courier partner for last-mile delivery across seller network.",
+    logo: "logyxpress.png",
   },
   {
     name: "Gati",
     cat: "E-Commerce",
     desc: "Powering deliveries for sellers across Tier 2 and Tier 3 cities.",
+    logo: "gati.png",
   },
 ];
 
@@ -185,9 +195,13 @@ export default function Partners() {
                 className="bg-white border border-soft-border rounded-card p-6 card-hover flex items-start gap-4"
               >
                 <div
-                  className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 font-bold text-lg font-heading ${i % 2 === 0 ? "gradient-navy text-white" : "gradient-orange text-white"}`}
+                  className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden`}
                 >
-                  {p.name[0]}
+                  <img
+                    src={`/${p.logo}`}
+                    alt={p.name}
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <div>
                   <div className="font-bold font-heading text-charcoal">
