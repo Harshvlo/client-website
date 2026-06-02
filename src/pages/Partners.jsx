@@ -21,34 +21,54 @@ import { useSEO } from "../hooks/useSEO";
 
 const partners = [
   {
-    name: "Shiprocket",
+    name: "DHL",
     cat: "Courier Tech",
-    desc: "India's leading eCommerce shipping solution integrated with VEXARO's network.",
+    desc: "Global logistics tech provider offering premium international express shipping integrated with VEXARO's network.",
   },
   {
-    name: "Shopify India",
+    name: "Amazon Shipping",
+    cat: "Courier Tech",
+    desc: "Advanced tech-driven e-commerce fulfillment network providing reliable merchant delivery integrated with VEXARO's network.",
+  },
+  {
+    name: "Aramex",
+    cat: "Courier Tech",
+    desc: "Global express distribution network offering cross-border e-commerce solutions integrated with VEXARO's network.",
+  },
+  {
+    name: "Ekart",
+    cat: "Courier Tech",
+    desc: "India's largest automated supply chain and 4PL e-commerce fulfillment solution integrated with VEXARO's network.",
+  },
+  {
+    name: "Xpressbees",
+    cat: "Courier Tech",
+    desc: "Logistics TechIndia's leading eCommerce shipping solution integrated with VEXARO's network.",
+  },
+  {
+    name: "SkyNet",
     cat: "E-commerce",
     desc: "Seamless order sync between Shopify stores and VEXARO's fulfilment platform.",
   },
   {
-    name: "WooCommerce",
+    name: "FedEx",
     cat: "E-commerce",
     desc: "Plugin-ready integration for WooCommerce merchants across India.",
   },
   {
-    name: "Razorpay",
-    cat: "Payments",
-    desc: "COD reconciliation and instant remittance powered by Razorpay.",
+    name: "Ecom Express",
+    cat: "Courier Partner",
+    desc: "Indian domestic courier and express delivery company.",
   },
   {
-    name: "Nykaa",
-    cat: "Retail Partner",
-    desc: "Trusted courier partner for last-mile delivery across Nykaa's seller network.",
+    name: "LogyXpress",
+    cat: "E-commerce",
+    desc: "Trusted courier partner for last-mile delivery across seller network.",
   },
   {
-    name: "Meesho",
-    cat: "Social Commerce",
-    desc: "Powering deliveries for Meesho sellers across Tier 2 and Tier 3 cities.",
+    name: "Gati",
+    cat: "E-Commerce",
+    desc: "Powering deliveries for sellers across Tier 2 and Tier 3 cities.",
   },
 ];
 
