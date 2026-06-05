@@ -26,8 +26,10 @@ export default function Contact() {
     name: "",
     email: "",
     phone: "",
+    company: "",
     subject: "",
     message: "",
+    botField: "",
   });
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
@@ -73,28 +75,30 @@ export default function Contact() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          to: "vexarocouriersolution@gmail.com",
-          subject: `VEXARO website enquiry: ${form.subject}`,
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          company: form.company,
+          subject: form.subject,
+          message: form.message,
+          botField: form.botField,
           submittedAt: new Date().toISOString(),
-          source: "VEXARO website contact form",
-          fields: {
-            "Full Name": form.name,
-            "Email Address": form.email,
-            "Phone Number": form.phone,
-            Subject: form.subject,
-            Message: form.message,
-          },
         }),
       });
 
       if (!response.ok) {
-        throw new Error(`Contact API returned ${response.status}`);
+        const payload = await response.json().catch(() => null);
+        throw new Error(
+          payload?.error || `Contact API returned ${response.status}`,
+        );
       }
 
       setSubmitted(true);
-    } catch {
+    } catch (err) {
       setErrors({
-        form: "We could not send your message right now. Please try again in a moment or email vexarocouriersolution@gmail.com directly.",
+        form:
+          err?.message ||
+          "We could not send your message right now. Please try again in a moment or email info@vexarocouriersolutions.com directly.",
       });
     } finally {
       setLoading(false);
@@ -166,8 +170,10 @@ export default function Contact() {
                         name: "",
                         email: "",
                         phone: "",
+                        company: "",
                         subject: "",
                         message: "",
+                        botField: "",
                       });
                     }}
                     className="mt-5 text-navy font-semibold font-heading text-sm hover:underline"
@@ -177,6 +183,21 @@ export default function Contact() {
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
+                  <input
+                    type="text"
+                    name="botField"
+                    value={form.botField}
+                    onChange={(e) =>
+                      setForm({ ...form, botField: e.target.value })
+                    }
+                    autoComplete="off"
+                    tabIndex={-1}
+                    style={{
+                      position: "absolute",
+                      left: "-9999px",
+                      top: "-9999px",
+                    }}
+                  />
                   <div className="grid sm:grid-cols-2 gap-4">
                     {field("name", "Full Name", "text", "Your full name")}
                     {field(
@@ -194,6 +215,14 @@ export default function Contact() {
                       "10-digit mobile number",
                     )}
                     {field("subject", "Subject", "text", "How can we help?")}
+                  </div>
+                  <div>
+                    {field(
+                      "company",
+                      "Company Name",
+                      "text",
+                      "Company (optional)",
+                    )}
                   </div>
                   <div>
                     <label className="block text-sm font-semibold font-heading text-charcoal mb-1.5">
@@ -274,7 +303,7 @@ export default function Contact() {
                             <span className="font-semibold text-charcoal">
                               Email:
                             </span>{" "}
-                            vexarocouriersolution@gmail.com
+                            info@vexarocouriersolutions.com
                           </p>
                         </div>
 
@@ -337,7 +366,7 @@ export default function Contact() {
                   },
                   {
                     icon: <FaEnvelope size={14} />,
-                    href: "mailto:vexarocouriersolution@gmail.com",
+                    href: "mailto:info@vexarocouriersolutions.com",
                     label: "Email",
                   },
                 ].map((s, i) => (

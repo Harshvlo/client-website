@@ -34,7 +34,7 @@ const pageContent = {
       "We collect contact, shipment, and enquiry details only to provide courier services and support.",
       "Information may be shared with delivery partners only when required to complete pickup, transit, or delivery.",
       "We use reasonable technical and operational safeguards to protect submitted business and customer data.",
-      "Customers can request corrections or support by contacting vexarocouriersolution@gmail.com.",
+      "Customers can request corrections or support by contacting info@vexarocouriersolutions.com.",
     ],
   },
   resources: {

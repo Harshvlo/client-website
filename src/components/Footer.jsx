@@ -59,7 +59,7 @@ export default function Footer() {
                 },
                 {
                   icon: <FaEnvelope size={14} />,
-                  href: "mailto:vexarocouriersolution@gmail.com",
+                  href: "mailto:info@vexarocouriersolutions.com",
                   label: "Email",
                 },
               ].map((s, i) => (
@@ -172,7 +172,7 @@ export default function Footer() {
               <li>
                 <div className="space-y-2 text-sm font-body text-white/50">
                   <a
-                    href="mailto:vexarocouriersolution@gmail.com"
+                    href="mailto:info@vexarocouriersolutions.com"
                     className="flex items-center gap-2 hover:text-orange transition-colors"
                   >
                     <FaEnvelope
@@ -181,7 +181,7 @@ export default function Footer() {
                     />
                     <span>Email:</span>
                     <span className="text-white/70">
-                      vexarocouriersolution@gmail.com
+                      info@vexarocouriersolutions.com
                     </span>
                   </a>
                   <a
